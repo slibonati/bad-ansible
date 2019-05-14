@@ -1,6 +1,2 @@
 ---
 # handlers file for db
-- name: initialize postgres
-  command: postgresql-setup initdb
-#- name: initialize postgres some more
-#  command: chkconfig postgresql on

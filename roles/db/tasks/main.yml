@@ -4,8 +4,6 @@
   yum:
     name: postgresql-server
     state: latest
-  notify: 
-    - initialize postgres
 - name: enable postgres at boot
   service:
     name: postgresql

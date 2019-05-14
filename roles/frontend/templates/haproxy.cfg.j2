@@ -25,5 +25,8 @@ backend app-servers
     mode http
     balance roundrobin
     option forwardfor
-    server app1 app1.{{GUID}}.internal:{{tomcat_port}} cookie app1 check
-    server app2 app2.{{GUID}}.internal:{{tomcat_port}} cookie app2 check
+
+{% for server in groups['apps'] %}
+    server {{server}} {{hostvars[server]['ansible_host']}}:{{tomcat_port}} cookie {{server}} check 
+{% endfor %}
+
