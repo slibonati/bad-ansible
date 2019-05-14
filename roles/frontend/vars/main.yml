@@ -1,0 +1,4 @@
+---
+# vars file for frontend
+tomcat_port: "8080"
+
